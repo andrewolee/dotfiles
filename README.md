@@ -2,7 +2,7 @@
 
 ## Setup Instructions for macOS
 
-1. Install Homebrew.
+1. Install [Homebrew](https://brew.sh).
 
 1. Install [Git](https://git-scm.com/download/mac) via Homebrew.
 
