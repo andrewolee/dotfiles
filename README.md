@@ -8,6 +8,8 @@
 
 1. Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) via Homebrew.
 
+1. Install [Ripgrep](https://github.com/BurntSushi/ripgrep) via Homebrew.
+
 1. Install [On My Posh](https://ohmyposh.dev/docs/installation/macos) via Homebrew.
 
 1. `git clone https://github.com/andrewolee/dotfiles.git`.
