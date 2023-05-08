@@ -26,5 +26,9 @@ function symlink {
 symlink nvim $HOME/.config
 symlink zsh/.zshrc $HOME
 
+brew install neovim
+brew install ripgrep
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+
 ln -s $PWD/nvim $HOME/.config
 ln -s $PWD/zsh/.zshrc $HOME
