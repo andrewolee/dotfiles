@@ -7,11 +7,18 @@ function symlink {
         exit 1
     fi
 
-    DEST=$2/$(basename $1)
+    src=$PWD/$1
+    target=$2/$(basename $1)
 
-    if [ -e $DEST ]
+    if [ -e $target ]
     then
-        echo "Overwrite existing config at $DEST? [y/n]"
+        if [ $(realpath $target) = $src ]
+        then
+            echo "Symlink already exists!"
+            return
+        fi
+
+        echo "Overwrite existing config at $target? [y/n]"
         read -q
         echo
 
@@ -20,12 +27,12 @@ function symlink {
             return
         fi
 
-        echo "Moving existing config at $DEST to trash..."
-        mv $DEST $HOME/.Trash
+        echo "Moving existing config at $target to trash..."
+        mv $target $HOME/.Trash
     fi
 
     echo "Creating symlink..."
-    ln -s $PWD/$1 $DEST
+    ln -s $src $target
 }
 
 function brewinstall {
@@ -44,6 +51,9 @@ then
     echo "Install Homebrew!"
     exit 1
 fi
+
+echo "Updating Homebrew packages..."
+brew update
 
 symlink nvim $HOME/.config
 symlink zsh/.zshrc $HOME
