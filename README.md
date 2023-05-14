@@ -6,16 +6,16 @@
 
 1. Install [Git](https://git-scm.com/download/mac) via Homebrew.
 
-1. Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) via Homebrew.
+1. Run `git clone https://github.com/andrewolee/dotfiles.git`.
 
-1. Install [Ripgrep](https://github.com/BurntSushi/ripgrep) via Homebrew.
+1. Run `cd dotfiles`.
 
-1. Install [On My Posh](https://ohmyposh.dev/docs/installation/macos) via Homebrew.
+1. Run `chmod +x init.sh`.
 
-1. `git clone https://github.com/andrewolee/dotfiles.git`.
+1. Run `./init.sh`. This will install the following:
 
-1. `cd dotfiles`.
+    - [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+    
+    - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 
-1. `chmod +x init.sh`.
-
-1. `./init.sh`.
+    - [On My Posh](https://ohmyposh.dev/docs/installation/macos)
