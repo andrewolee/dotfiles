@@ -61,3 +61,4 @@ symlink zsh/.zshrc $HOME
 brewinstall neovim
 brewinstall ripgrep
 brewinstall jandedobbeleer/oh-my-posh/oh-my-posh
+brewinstall node

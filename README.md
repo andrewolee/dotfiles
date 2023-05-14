@@ -19,3 +19,5 @@
     - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 
     - [On My Posh](https://ohmyposh.dev/docs/installation/macos)
+
+    - [Node.js](https://nodejs.org/en)
