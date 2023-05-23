@@ -21,3 +21,5 @@
     - [On My Posh](https://ohmyposh.dev/docs/installation/macos)
 
     - [Node.js](https://nodejs.org/en)
+
+    - [Tmux](https://github.com/tmux/tmux/wiki/Installing)
