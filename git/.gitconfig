@@ -9,3 +9,8 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[alias]
+	co = checkout
+	br = branch
+	cm = commit -m
+	st = status
