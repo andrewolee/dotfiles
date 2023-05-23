@@ -57,6 +57,7 @@ brew update
 
 symlink nvim $HOME/.config
 symlink zsh/.zshrc $HOME
+symlink git/.gitconfig $HOME
 
 brewinstall neovim
 brewinstall ripgrep

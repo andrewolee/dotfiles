@@ -1,0 +1,11 @@
+[user]
+	name = Andrew Lee
+	email = 132124185+andrewolee@users.noreply.github.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
