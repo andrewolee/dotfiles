@@ -1,5 +1,5 @@
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-eval "$(oh-my-posh init zsh --config $HOME/.config/posh/light.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/posh/theme.omp.json)"
 fi
 
 autoload -Uz compinit && compinit
