@@ -66,3 +66,4 @@ brewinstall ripgrep
 brewinstall jandedobbeleer/oh-my-posh/oh-my-posh
 brewinstall node
 brewinstall tmux
+brewinstall fd
