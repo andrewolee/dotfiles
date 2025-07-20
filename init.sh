@@ -59,6 +59,7 @@ symlink nvim $HOME/.config
 symlink zsh/.zshrc $HOME
 symlink git/.gitconfig $HOME
 symlink posh $HOME/.config
+symlink tmux/.tmux.conf $HOME
 
 brewinstall neovim
 brewinstall ripgrep
