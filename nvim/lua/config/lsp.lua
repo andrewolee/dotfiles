@@ -1,1 +1,4 @@
 vim.lsp.enable('pyright')
+vim.lsp.enable('prettier')
+vim.lsp.enable('lua-language-server')
+vim.lsp.enable('typescript-language-server')
