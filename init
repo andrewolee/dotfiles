@@ -17,14 +17,14 @@ configure() {
         return 1
     fi
 
-    if ! command -v $cmd; then
+    if ! command -v $cmd >/dev/null; then
         echo "$name is not installed. Skipping $name configuration."
         return 0
     fi
 
     if [[ -e $target ]]; then
         if [[ $(realpath $target) = $src ]]; then
-            echo "Symlink already exists. Completing as No-op."
+            echo "Symlink for $name already exists at $target. Completing as No-op."
             return 0
         fi
 
@@ -32,7 +32,7 @@ configure() {
         return 0
     fi
 
-    if ! ln -s $src $target; then
+    if ! ln -s $src $target >/dev/null; then
         echo "Symlink creation failed: ($?)" >&2
         return 1
     fi
@@ -42,4 +42,3 @@ configure() {
 
 configure Tmux tmux tmux/.tmux.conf $HOME
 configure Neovim nvim nvim $HOME/.config
-configure Zsh zsh zsh/.zshrc $HOME
