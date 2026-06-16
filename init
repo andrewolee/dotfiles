@@ -28,7 +28,7 @@ configure() {
             return 0
         fi
 
-        echo "There is an existing configuration at $target. Skipping."
+        echo "There is an existing configuration for $name at $target. Skipping."
         return 0
     fi
 
