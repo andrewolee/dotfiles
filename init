@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-configure() {
-    if [[ $# -ne 4 ]]; then
+configure_base() {
+    if [[ $# -ne 5 ]]; then
         echo "Invalid argument count: $#" >&2
         echo "Usage: configure <friendly name> <command> <configuration source> <configuration target>"
         return 1
@@ -11,6 +11,7 @@ configure() {
     local cmd="$2"
     local src="$PWD/$3"
     local target="$4/$(basename $3)"
+    local shell="$5"
 
     if [[ ! -e $src ]]; then
         echo "Source file does not exists at $src!" >&2
@@ -22,23 +23,51 @@ configure() {
         return 0
     fi
 
-    if [[ -e $target ]]; then
-        if [[ $(realpath $target) = $src ]]; then
-            echo "Symlink for $name already exists at $target. Completing as No-op."
+    if $shell; then
+        local source_command=". $src"
+        echo "$source_command"
+
+        if grep "$source_command" "$target"; then
+            echo "$name configuration file at $src is already sourced at $target"
             return 0
         fi
 
-        echo "There is an existing configuration for $name at $target. Skipping."
-        return 0
-    fi
+        if ! target >> source_command; then
+            echo "Failed to modify $target: ($?)" >&2
+            return 1
+        fi
+    else
+        if [[ -e $target ]]; then
+            if [[ $(realpath $target) = $src ]]; then
+                echo "Symlink for $name already exists at $target. Completing as No-op."
+                return 0
+            fi
 
-    if ! ln -s $src $target >/dev/null; then
-        echo "Symlink creation failed: ($?)" >&2
-        return 1
+            echo "There is an existing configuration for $name at $target. Skipping."
+            return 0
+        fi
+
+        if ! ln -s $src $target >/dev/null; then
+            echo "Symlink creation failed: ($?)" >&2
+            return 1
+        fi
     fi
 
     echo "Successfully configured $name."
+    return 0
 }
 
+configure_shell() {
+    configure_base "$@" true
+}
+
+configure() {
+    configure_base "$@" false
+}
+
+# Tmux and Neovim
 configure Tmux tmux tmux/.tmux.conf $HOME
 configure Neovim nvim nvim $HOME/.config
+
+# Zsh
+configure_shell Zsh zsh zsh/.zshrc $HOME/.zshrc
