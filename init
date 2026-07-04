@@ -37,11 +37,6 @@ configure_base() {
         fi
     else
         if [[ -e "$target" ]]; then
-            if [[ $(realpath "$target") = "$src" ]]; then
-                echo "Symlink for $cmd already exists at $target. Completing as No-op."
-                return 0
-            fi
-
             echo "There is an existing configuration for $cmd at $target. Skipping."
             return 0
         fi
@@ -69,6 +64,9 @@ configure tmux tmux/.tmux.conf $HOME/.tmux.conf
 
 # Neovim
 configure nvim nvim $HOME/.config/nvim
+
+# Git
+configure git git/.gitconfig $HOME/.gitconfig
 
 # Zsh
 configure_shell zsh zsh/.zshrc $HOME/.zshrc
