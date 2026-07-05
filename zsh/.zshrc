@@ -4,6 +4,6 @@ alias vi=nvim
 alias vim=nvim
 
 # Start tmux
-if command -v tmux && [[ -z "$TMUX" ]]; then
-    tmux attach || tmux
+if command -v tmux >/dev/null && [[ -z "$TMUX" ]]; then
+    tmux attach >/dev/null || tmux >/dev/null
 fi
