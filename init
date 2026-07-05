@@ -25,13 +25,15 @@ configure_base() {
 
     if "$shell"; then
         local source_command=". $src"
+        local pre_gate="# >>> ========== >>>"
+        local post_gate="# <<< ========== <<<"
 
         if grep -q "$source_command" "$target"; then
             echo "$cmd configuration file at $src is already sourced at $target"
             return 0
         fi
 
-        if ! echo "$source_command" >> "$target"; then
+        if ! printf "\n%s\n%s\n%s\n" "$pre_gate" "$source_command" "$post_gate" >> "$target"; then
             echo "Failed to modify $target: ($?)" >&2
             return 1
         fi
