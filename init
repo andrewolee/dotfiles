@@ -7,7 +7,7 @@ configure_base() {
         return 1
     fi
 
-    local base_path="$(cd $(dirname "$0"); pwd)"
+    local base_path="$(cd "$(dirname "$0")"; pwd)"
     local cmd="$1"
     local src="$base_path/$2"
     local target="$3"
