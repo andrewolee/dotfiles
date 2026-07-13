@@ -14,6 +14,9 @@ vim.keymap.set('n', '<leader>e', '<CMD>Oil<CR>', { desc = 'Open parent directory
 -- LSP go to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 
+-- Switch to last buffer
+vim.keymap.set('n', '<leader>bb', '<CMD>e #<CR>', { desc = 'Switch to last buffer' })
+
 -- Split pane
 vim.keymap.set('n', 'ss', '<C-w>v')
 
