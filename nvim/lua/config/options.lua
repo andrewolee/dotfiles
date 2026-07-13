@@ -25,8 +25,3 @@ vim.opt.splitbelow = true
 
 -- Use system clipboard for copy/paste
 vim.opt.clipboard:append { 'unnamedplus' }
-
--- Match terminal background instead of the colorscheme's own bg
-for _, group in ipairs({ 'Normal', 'NormalNC', 'NormalFloat', 'SignColumn' }) do
-    vim.api.nvim_set_hl(0, group, { bg = 'none' })
-end
