@@ -11,6 +11,9 @@ vim.keymap.set('n', 'j', 'gj')
 -- Netrw
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
 
+-- LSP go to definition
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+
 -- Split pane
 vim.keymap.set('n', 'ss', '<C-w>v')
 

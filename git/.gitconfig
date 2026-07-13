@@ -1,3 +1,6 @@
 [user]
 	name = Andrew Lee
 	email = andrewolee99@gmail.com
+
+[init]
+	defaultBranch = main
