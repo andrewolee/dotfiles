@@ -9,7 +9,7 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', 'j', 'gj')
 
 -- Oil (file explorer)
-vim.keymap.set('n', '<leader>e', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+vim.keymap.set('n', '<leader>e', '<CMD>Oil --float<CR>', { desc = 'Open parent directory' })
 
 -- LSP go to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
