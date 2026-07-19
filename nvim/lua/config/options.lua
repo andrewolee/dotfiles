@@ -25,3 +25,6 @@ vim.opt.splitbelow = true
 
 -- Use system clipboard for copy/paste
 vim.opt.clipboard:append { 'unnamedplus' }
+
+-- Reload buffers automatically if the underlying file changed on disk
+vim.opt.autoread = true
