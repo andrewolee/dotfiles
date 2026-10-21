@@ -1,3 +1,6 @@
+# Machine-local secrets/overrides (not tracked in source control)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Aliases
 alias cls=clear
 alias vi=nvim
